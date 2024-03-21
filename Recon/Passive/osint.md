@@ -3,17 +3,17 @@
 Example: site:wikipedia.org
 Result: This search will return pages only from the domain wikipedia.org.
 
-#inurl:
+# inurl:
 
-Example: inurl:login
+inurl:login
 Result: This search will return pages with "login" in their URL, such as www.example.com/login.html.
 
-#filetype:
+# filetype:
 
 Example: filetype:pdf cybersecurity
 Result: This search will return PDF documents containing the term "cybersecurity".
 
-#intitle:
+# intitle:
 
 Example: intitle:cybersecurity best practices
 Result: This search will return pages with "cybersecurity" in the title and "best practices" somewhere in the content.
