@@ -446,6 +446,47 @@ SUMMARY
 [*] 1 rows returned
 [recon-ng][berlin][hackertarget] >
 ```
+```
+[recon-ng][berlin] > marketplace search repo
+[*] Searching module index for 'repo'...
+
+  +------------------------------------------------------------------------------------------------+
+  |                       Path                      | Version |     Status    |  Updated   | D | K |
+  +------------------------------------------------------------------------------------------------+
+  | recon/companies-multi/github_miner              | 1.1     | installed     | 2020-05-15 |   | * |
+  | recon/hosts-hosts/virustotal                    | 1.0     | not installed | 2019-06-24 |   | * |
+  | recon/netblocks-hosts/virustotal                | 1.0     | not installed | 2019-06-24 |   | * |
+  | recon/profiles-contacts/dev_diver               | 1.1     | not installed | 2020-05-15 |   |   |
+  | recon/profiles-repositories/github_repos        | 1.1     | not installed | 2020-05-15 |   | * |
+  | recon/repositories-profiles/github_commits      | 1.0     | not installed | 2019-06-24 |   | * |
+  | recon/repositories-vulnerabilities/gists_search | 1.0     | not installed | 2019-06-24 |   |   |
+  | recon/repositories-vulnerabilities/github_dorks | 1.0     | not installed | 2019-06-24 |   | * |
+  | reporting/csv                                   | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/html                                  | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/json                                  | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/list                                  | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/proxifier                             | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/pushpin                               | 1.0     | not installed | 2019-06-24 |   | * |
+  | reporting/xlsx                                  | 1.0     | not installed | 2019-06-24 |   |   |
+  | reporting/xml                                   | 1.1     | not installed | 2019-06-24 |   |   |
+  +------------------------------------------------------------------------------------------------+
+
+  D = Has dependencies. See info for details.
+  K = Requires keys. See info for details.
+```
+```
+[recon-ng][berlin] > marketplace search hackertarget
+[*] Searching module index for 'hackertarget'...
+
+  +-----------------------------------------------------------------------------+
+  |               Path               | Version |   Status  |  Updated   | D | K |
+  +-----------------------------------------------------------------------------+
+  | recon/domains-hosts/hackertarget | 1.1     | installed | 2020-05-17 |   |   |
+  +-----------------------------------------------------------------------------+
+
+  D = Has dependencies. See info for details.
+  K = Requires keys. See info for details.
+```
 
 # Add API keys to Recon-ng
 It is a simple matter to add API keys to recon-ng. Shodan with a PRO account is a highly recommended option. This will enable queries to open ports on your discovered hosts without sending any packets to the target systems.
@@ -471,4 +512,5 @@ workspaces
 
 [recon-ng][berlin]/.recon-ng$ 
 ```
+
 
