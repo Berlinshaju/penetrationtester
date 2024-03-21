@@ -291,8 +291,5 @@ Usage: marketplace install <<path>|<prefix>|all>
 [*] Module installed: recon/domains-hosts/brute_hosts
 [*] Module installed: recon/domains-hosts/builtwith
 [*] Module installed: recon/domains-hosts/censys_domain
-
-
-
-
+```
 ```
