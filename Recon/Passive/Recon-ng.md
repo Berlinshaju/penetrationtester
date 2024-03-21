@@ -4,7 +4,7 @@ Installing Recon-ng is very simple and there are a few common ways. Below are a 
 # Kali:
 At the time of this article version 5.1.2 comes pre-installed with Kali Linux. Having said that, its good to run 
 ```
-apt-get update && apt-get install recon-ng 
+sudo apt-get update && sudo apt-get install recon-ng 
 ```
 to ensure latest dependencies installed.
 
