@@ -1,3 +1,6 @@
+
+
+
 <button onclick="copyToClipboard()">netdiscover</button>
 <!-- Example README.md -->
 1. This is the line you want to copy. [Copy](#) <!-- This will be replaced by JavaScript -->
@@ -7,7 +10,11 @@ nmap -sn 192.168.1.1-255
 
 nmap -sn 192.168.1.0/24
 
+
+'''
 sudo arp-scan 192.168.1.0/24
+'''
+
 
 sudo arp-scan --localnet
 
