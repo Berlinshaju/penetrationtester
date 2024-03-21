@@ -231,5 +231,68 @@ Usage: marketplace info <<path>|<prefix>|all>
   D = Has dependencies. See info for details.
   K = Requires keys. See info for details.
 ```
+[recon-ng][berlin] > marketplace install
+Installs modules from the marketplace
+
+Usage: marketplace install <<path>|<prefix>|all>
+```
+```
+[recon-ng][berlin] > marketplace install all
+[*] Module installed: discovery/info_disclosure/cache_snoop
+[*] Module installed: discovery/info_disclosure/interesting_files
+[*] Module installed: exploitation/injection/command_injector
+[*] Module installed: exploitation/injection/xpath_bruter
+[*] Module installed: import/csv_file
+[*] Module installed: import/list
+[*] Module installed: import/masscan
+[*] Module installed: import/nmap
+[*] Module installed: recon/companies-contacts/bing_linkedin_cache
+[*] Module installed: recon/companies-contacts/censys_email_address
+[*] Module installed: recon/companies-contacts/pen
+[*] Module installed: recon/companies-domains/censys_subdomains
+[*] Module installed: recon/companies-domains/pen
+[*] Module installed: recon/companies-domains/viewdns_reverse_whois
+[*] Module installed: recon/companies-domains/whoxy_dns
+[*] Module installed: recon/companies-hosts/censys_org
+[*] Module installed: recon/companies-hosts/censys_tls_subjects
+[*] Module installed: recon/companies-multi/github_miner
+[*] Module installed: recon/companies-multi/shodan_org
+[*] Module installed: recon/companies-multi/whois_miner
+[*] Module installed: recon/contacts-contacts/abc
+[*] Module installed: recon/contacts-contacts/mailtester
+[*] Module installed: recon/contacts-contacts/mangle
+[*] Module installed: recon/contacts-contacts/unmangle
+[*] Module installed: recon/contacts-credentials/hibp_breach
+[*] Module installed: recon/contacts-credentials/hibp_paste
+[*] Module installed: recon/contacts-domains/migrate_contacts
+[*] Module installed: recon/contacts-profiles/fullcontact
+[*] Module installed: recon/credentials-credentials/adobe
+[*] Module installed: recon/credentials-credentials/bozocrack
+[*] Module installed: recon/credentials-credentials/hashes_org
+[*] Module installed: recon/domains-companies/censys_companies
+[*] Module installed: recon/domains-companies/pen
+[*] Module installed: recon/domains-companies/whoxy_whois
+[*] Module installed: recon/domains-contacts/hunter_io
+[*] Module installed: recon/domains-contacts/metacrawler
+[*] Module installed: recon/domains-contacts/pen
+[*] Module installed: recon/domains-contacts/pgp_search
+[*] Module installed: recon/domains-contacts/whois_pocs
+[*] Module installed: recon/domains-contacts/wikileaker
+[*] Module installed: recon/domains-credentials/pwnedlist/account_creds
+[*] Module installed: recon/domains-credentials/pwnedlist/api_usage
+[*] Module installed: recon/domains-credentials/pwnedlist/domain_creds
+[*] Module installed: recon/domains-credentials/pwnedlist/domain_ispwned
+[*] Module installed: recon/domains-credentials/pwnedlist/leak_lookup
+[*] Module installed: recon/domains-credentials/pwnedlist/leaks_dump
+[*] Module installed: recon/domains-domains/brute_suffix
+[*] Module installed: recon/domains-hosts/binaryedge
+[*] Module installed: recon/domains-hosts/bing_domain_api
+[*] Module installed: recon/domains-hosts/bing_domain_web
+[*] Module installed: recon/domains-hosts/brute_hosts
+[*] Module installed: recon/domains-hosts/builtwith
+[*] Module installed: recon/domains-hosts/censys_domain
 
 
+
+
+```
