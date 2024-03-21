@@ -523,134 +523,6 @@ So in this case, for the github_dorks module to work we need to execute the keys
 [*] Key 'github_api' added.
 ```
 ```
-Security API
-Pricing
-Resources
-Log In
-Sign Up Free
-TOOLS
-SECURITYTRAILS BLOG · AUG 13 · BY NICOLAS PENCE
-Recon-ng: An Open Source Reconnaissance Tool
-Reading time: 12 minutes
-Facebook
-Twitter
-LinkedIn
-Listen to this article
-The OSINT tools arsenal is now filled with more pieces of code that help "get things done" better, faster and more effectively than ever before. And Recon-ng, with its modular design, brings you a familiar way to operate a command line while its similar syntax to the Metasploit framework allows you to mount different purpose modules and configure them independently.
-
-Recon-NG
-This kind of tool really enhances your toolbox when realizing an attack surface analysis against a desired target. Additionally, it provides a development interface that enables you to create your own modules and expand the tools' capabilities even further.
-
-Getting to know Recon-ng
-Recon-ng installation
-Recon-ng usage
-API configuration
-Preparing the ground
-Executing Recon-ng
-Removing modules
-Global configurations
-Additional tooltips
-Summary
-¶Getting to know Recon-ng
-This OSINT tool has plenty of features that come "out of the box" for you to enable and use. These features differ as do their sources of information, from domain name discovery and credentials gathering to repository scrapping with additional integrations like Masscan. In this post, we'll take a look at installing Recon-ng, examine the different options available, and explore displaying scan results.
-
-Also, its CLI usability deserves a special mention. Merely pressing the tab key twice will display the already-typed command, which is especially helpful when you're not too familiar with the tool and need extra information to see what you can do with it.
-
-    [recon-ng][default][pen] > goptions set
-    NAMESERVER PROXY THREADS TIMEOUT USER-AGENT VERBOSITY
-In the following sections, we'll delve into each of the different options available, to show you just how painless it is to use Recon-ng.
-
-¶Recon-ng installation
-Installing is a simple process. Simply clone all the repository files using git, and it's ready for execution:
-
-    $ git clone https://github.com/lanmaster53/recon-ng.git
-    Cloning into 'recon-ng'...
-    remote: Enumerating objects: 9503, done.
-    remote: Total 9503 (delta 0), reused 0 (delta 0), pack-reused 9503
-    Receiving objects: 100% (9503/9503), 3.05 MiB | 3.61 MiB/s, done.
-    Resolving deltas: 100% (4955/4955), done.
-We recommend that you check all requirements beforehand, using a PIP version that uses Python3:
-
-    $ cd recon-ng
-    $ pip3 install -r REQUIREMENTS
-Once all of this is done, you're ready to launch the application. There are three executables in this folder that allow you to run Recon-ng for different purposes:
-
-recon-ng: This is the command-line interactive interpreter. With it you can run all commands within the internal command prompt:
-Command-line interactive interpreter
-You'll notice with the first run the "No modules enabled/installed" message. That's because there isn't one yet—we need to install the ones we intend to use before putting the software to work.
-
-    $ ./recon-cli -G
-
-      Name Current Value Required Description
-      ---------- ------------- -------- -----------
-      NAMESERVER 8.8.8.8 yes default nameserver for the resolver mixin
-      PROXY no proxy server (address:port)
-      THREADS 10 yes number of threads (where applicable)
-      TIMEOUT 10 yes socket timeout (seconds)
-      USER-AGENT Recon-ng/v5 yes user-agent string
-      VERBOSITY 1 yes verbosity level (0 = minimal, 1 = verbose, 2 = debug)
-recon-cli: This is the correspondent command-line script. It allows you to execute modules and different features as a single line command.
-Recon CLI
-recon-web: This process starts a web daemon so you can enter the dashboard to visualize all activities:
-Recon WEB
-To access by default, you can enter the following address http://127.0.0.1:5000/ on your browser. The web interface looks like this:
-
-Web visualization
-While web visualization is very simple, it provides you with a quick overview of what is being done and the status of different processes in conjunction with the obtained information.
-
-¶Recon-ng usage
-This information gathering tool comes with many options that can be tricky to use. The modules don't come installed by default so you have to bring them in as needed. This will be done with the marketplace option:
-
-    [recon-ng][default] > help
-
-    Commands (type [help|?] <topic>):
-    ---------------------------------
-    back Exits the current context
-    dashboard Displays a summary of activity
-    db Interfaces with the workspace's database
-    exit Exits the framework
-    help Displays this menu
-    index Creates a module index (dev only)
-    keys Manages third party resource credentials
-    marketplace Interfaces with the module marketplace
-    modules Interfaces with installed modules
-    options Manages the current context options
-    pdb Starts a Python Debugger session (dev only)
-    script Records and executes command scripts
-    shell Executes shell commands
-    show Shows various framework items
-    snapshots Manages workspace snapshots
-    spool Spools output to a file
-    workspaces Manages workspaces
-A simple marketplace search will show all available modules, along with their different characteristics. Some of them require the use of API keys, others have dependencies to be satisfied, and others have both.
-
-    [recon-ng][default] > marketplace search
-
-    +-----------------------------------------------------------------------------------------------+
-    | Path | Version | Status | Updated | D | K |
-    +-----------------------------------------------------------------------------------------------+
-    | discovery/info_disclosure/cache_snoop | 1.0 | installed | 2019-06-24 | | |
-    | discovery/info_disclosure/interesting_files | 1.1 | installed | 2020-01-13 | | |
-    | exploitation/injection/command_injector | 1.0 | installed | 2019-06-24 | | |
-    | exploitation/injection/xpath_bruter | 1.2 | installed | 2019-10-08 | | |
-    | import/csv_file | 1.1 | installed | 2019-08-09 | | |
-    | import/list | 1.1 | installed | 2019-06-24 | | |
-    | import/masscan | 1.0 | installed | 2020-04-07 | | |
-    | import/nmap | 1.0 | installed | 2019-06-24 | | |
-    | recon/companies-contacts/bing_linkedin_cache | 1.0 | installed | 2019-06-24 | | * |
-    | recon/companies-contacts/censys_email_address | 1.0 | disabled | 2019-08-22 | | * |
-    | recon/companies-contacts/pen | 1.1 | installed | 2019-10-15 | | |
-    | recon/companies-domains/censys_subdomains | 1.0 | disabled | 2019-08-22 | | * |
-    | recon/companies-domains/pen | 1.1 | installed | 2019-10-15 | | |
-    | reporting/proxifier | 1.0 | installed | 2019-06-24 | | |
-    | reporting/pushpin | 1.0 | installed | 2019-06-24 | | * |
-    | reporting/xlsx | 1.0 | installed | 2019-06-24 | | |
-    | reporting/xml | 1.1 | installed | 2019-06-24 | | |
-    +-----------------------------------------------------------------------------------------------+
-
-    D = Has dependencies. See info for details.
-    K = Requires keys. See info for details.
-When you find the desired module, you can install it with the marketplace install command followed by the designated path to reach the module. In the case below we're installing the migrate_contacts module:
 
     [recon-ng][default] > marketplace install contacts-domains/migrate_contacts
     [*] Module installed: recon/contacts-domains/migrate_contacts
@@ -675,8 +547,9 @@ You can also search the marketplace for a particular type of category, such as a
 
       D = Has dependencies. See info for details.
       K = Requires keys. See info for details.
+```
 If you want to take a deeper look at what the module does, you can use the marketplace info module followed by the module name or path, in this case Github Dorks:
-
+```
     [recon-ng][default] > marketplace info github dorks
     +------------------------------------------------------------------------------------------------------------------------------------+
     | path | recon/repositories-vulnerabilities/github_dorks |
@@ -692,9 +565,7 @@ If you want to take a deeper look at what the module does, you can use the marke
     | files | ['github_dorks.txt'] |
     | status | installed |
     +------------------------------------------------------------------------------------------------------------------------------------+
-¶API configuration
-As mentioned before, some modules will require an API key to the associated service they run on to work properly. You'll need to provide this key after its installation, as demonstrated in the message below:
-
+```
     [recon-ng][default] > marketplace install github_dorks
     [*] Module installed: recon/repositories-vulnerabilities/github_dorks
     [*] Reloading modules...
@@ -719,6 +590,7 @@ So in this case, for the github_dorks module to work we need to execute the keys
 ```
 [recon-ng][default] > keys add github_api 987sdfs8[...]dsdf0980
 [*] Key 'github_api' added.
+```
 Afterward, you may check that the key is installed by typing keys list, which will output all keys installed at that moment:
 ```
     [recon-ng][default] > keys list
