@@ -231,6 +231,7 @@ Usage: marketplace info <<path>|<prefix>|all>
   D = Has dependencies. See info for details.
   K = Requires keys. See info for details.
 ```
+```
 [recon-ng][berlin] > marketplace install
 Installs modules from the marketplace
 
@@ -291,5 +292,4 @@ Usage: marketplace install <<path>|<prefix>|all>
 [*] Module installed: recon/domains-hosts/brute_hosts
 [*] Module installed: recon/domains-hosts/builtwith
 [*] Module installed: recon/domains-hosts/censys_domain
-```
 ```
