@@ -447,6 +447,7 @@ SUMMARY
 [recon-ng][berlin][hackertarget] >
 ```
 ```
+[recon-ng][berlin][hackertarget] > back
 [recon-ng][berlin] > marketplace search repo
 [*] Searching module index for 'repo'...
 
