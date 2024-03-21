@@ -603,6 +603,7 @@ Afterward, you may check that the key is installed by typing keys list, which wi
 ```
 For keys removal, just execute the keys remove command followed by the module name:
 ```
+```
     [recon-ng][default] > keys remove
     Removes a third party resource credential
 
