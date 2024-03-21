@@ -293,3 +293,182 @@ Usage: marketplace install <<path>|<prefix>|all>
 [*] Module installed: recon/domains-hosts/builtwith
 [*] Module installed: recon/domains-hosts/censys_domain
 ```
+```
+[recon-ng][berlin] > modules 
+Interfaces with installed modules
+
+Usage: modules <load|reload|search> [...]
+```
+```
+[recon-ng][berlin] > modules load recon/domains-hosts/hackertarget
+[recon-ng][berlin][hackertarget] > help
+
+Commands (type [help|?] <topic>):
+---------------------------------
+back            Exits the current context
+dashboard       Displays a summary of activity
+db              Interfaces with the workspace's database
+exit            Exits the framework
+goptions        Manages the global context options
+help            Displays this menu
+info            Shows details about the loaded module
+input           Shows inputs based on the source option
+keys            Manages third party resource credentials
+modules         Interfaces with installed modules
+options         Manages the current context options
+pdb             Starts a Python Debugger session (dev only)
+reload          Reloads the loaded module
+run             Runs the loaded module
+script          Records and executes command scripts
+shell           Executes shell commands
+show            Shows various framework items
+spool           Spools output to a file
+```
+```
+[recon-ng][berlin][hackertarget] > options
+Manages the current context options
+
+Usage: options <list|set|unset> [...]
+```
+```
+[recon-ng][berlin][hackertarget] > options list
+
+  Name    Current Value  Required  Description
+  ------  -------------  --------  -----------
+  SOURCE  default        yes       source of input (see 'info' for details)
+```
+```
+[recon-ng][berlin][hackertarget] > info
+
+      Name: HackerTarget Lookup
+    Author: Michael Henriksen (@michenriksen)
+   Version: 1.1
+
+Description:
+  Uses the HackerTarget.com API to find host names. Updates the 'hosts' table with the results.
+
+Options:
+  Name    Current Value  Required  Description
+  ------  -------------  --------  -----------
+  SOURCE  default        yes       source of input (see 'info' for details)
+
+Source Options:
+  default        SELECT DISTINCT domain FROM domains WHERE domain IS NOT NULL
+  <string>       string representing a single input
+  <path>         path to a file containing a list of inputs
+  query <sql>    database query returning one column of inputs
+```
+```
+[recon-ng][berlin][hackertarget] > 
+[recon-ng][berlin][hackertarget] > info
+
+      Name: HackerTarget Lookup
+    Author: Michael Henriksen (@michenriksen)
+   Version: 1.1
+
+Description:
+  Uses the HackerTarget.com API to find host names. Updates the 'hosts' table with the results.
+
+Options:
+  Name    Current Value  Required  Description
+  ------  -------------  --------  -----------
+  SOURCE  default        yes       source of input (see 'info' for details)
+
+Source Options:
+  default        SELECT DISTINCT domain FROM domains WHERE domain IS NOT NULL
+  <string>       string representing a single input
+  <path>         path to a file containing a list of inputs
+  query <sql>    database query returning one column of inputs
+```
+```
+[recon-ng][berlin][hackertarget] > options set SOURCE isoeh.com
+SOURCE => isoeh.com
+[recon-ng][berlin][hackertarget] > info
+
+      Name: HackerTarget Lookup
+    Author: Michael Henriksen (@michenriksen)
+   Version: 1.1
+
+Description:
+  Uses the HackerTarget.com API to find host names. Updates the 'hosts' table with the results.
+
+Options:
+  Name    Current Value  Required  Description
+  ------  -------------  --------  -----------
+  SOURCE  isoeh.com      yes       source of input (see 'info' for details)
+
+Source Options:
+  default        SELECT DISTINCT domain FROM domains WHERE domain IS NOT NULL
+  <string>       string representing a single input
+  <path>         path to a file containing a list of inputs
+  query <sql>    database query returning one column of inputs
+```
+```
+[recon-ng][berlin][hackertarget] >
+[recon-ng][berlin][hackertarget] > input
+
+  +---------------+
+  | Module Inputs |
+  +---------------+
+  | isoeh.com     |
+  +---------------+
+```
+```
+[recon-ng][berlin][hackertarget] > run
+
+---------
+ISOEH.COM
+---------
+[*] Country: None
+[*] Host: www.isoeh.com
+[*] Ip_Address: 172.67.180.166
+[*] Latitude: None
+[*] Longitude: None
+[*] Notes: None
+[*] Region: None
+[*] --------------------------------------------------
+
+-------
+SUMMARY
+-------
+[*] 1 total (1 new) hosts found.
+[recon-ng][berlin][hackertarget] > 
+```
+```
+[recon-ng][berlin][hackertarget] > show hosts
+
+  +---------------------------------------------------------------------------------------------------------+
+  | rowid |      host     |   ip_address   | region | country | latitude | longitude | notes |    module    |
+  +---------------------------------------------------------------------------------------------------------+
+  | 1     | www.isoeh.com | 172.67.180.166 |        |         |          |           |       | hackertarget |
+  +---------------------------------------------------------------------------------------------------------+
+
+[*] 1 rows returned
+[recon-ng][berlin][hackertarget] >
+```
+
+# Add API keys to Recon-ng
+It is a simple matter to add API keys to recon-ng. Shodan with a PRO account is a highly recommended option. This will enable queries to open ports on your discovered hosts without sending any packets to the target systems.
+
+# How to add shodan API key
+Create or login to your Shodan account, Go to 'Account" in top right corner. The API Key is listed here on the Account Overview page.
+
+Recon-ng shows the syntax to add an API key is below
+```
+[recon-ng][default] > keys add 
+Adds/Updates a third party resource credential
+
+Usage: keys add name value
+[recon-ng][default] keys add shodan_api bbexampleapikey33 
+```
+```
+[recon-ng][berlin]/.recon-ng$ ls
+
+keys.db  
+modules  
+modules.yml  
+workspaces
+
+[recon-ng][berlin]/.recon-ng$ 
+```
+
