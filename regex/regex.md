@@ -33,3 +33,18 @@ grep -E -o '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b' test.txt
 ```
 grep -E -i '\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b' test.txt
 ```
+# ip address
+```
+grep -E -o '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' file.txt
+```
+```
+grep -E -i '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' file.txt
+```
+
+# Mac Address
+```
+grep -E -o '([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})' file.txt
+```
+```
+grep -E -i '([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})' file.txt
+```
