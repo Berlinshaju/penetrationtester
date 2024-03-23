@@ -41,6 +41,9 @@ nmap -sn 192.168.1.0/24 | grep "Nmap scan report for" | awk '{print $5}'
 nmap -sn 192.168.1.0/24 | grep "MAC Address:" | awk '{print $3}'
 ```
 ```
+nmap -sn 192.168.1.0/24 | awk '/Nmap scan report for/ {ip=$5} /MAC Address:/ {print ip,$3}'
+```
+```
 nmap -sn 192.168.1.0/24 | grep "Nmap scan report" | awk '{print $4, $5}'
 ```
 ```
