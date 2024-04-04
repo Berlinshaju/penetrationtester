@@ -16,7 +16,7 @@ awk '{print $1 $3}' name.txt
 ```
 awk '{print $1, $3}' name.txt
 ```
-# NR: (Number Record) is the variable that keeps count of the rows after each line's execution... You can use NR command to number the lines (awk '{print NR,$0}' file.txt). Note that awk considers rows as records. 
+NR: (Number Record) is the variable that keeps count of the rows after each line's execution... You can use NR command to number the lines (awk '{print NR,$0}' file.txt). Note that awk considers rows as records. 
 ```
 hello how are you
 hi what about you
@@ -35,7 +35,7 @@ awk '{print NR,$0}' file.txt
 5 nahamsec hackerone bughunting 12365
 6 stok hackerone bughunting 1234
 ```
-# FS: (Field Separator) is the variable to set in case you want to define the field for input stream. The field separation (defaut to space) that we talked above and can be altered to whatever you want while specifying the pattern. FS can be defined to another character(s)(yea, can be plural) at the BEGIN{command}.
+FS: (Field Separator) is the variable to set in case you want to define the field for input stream. The field separation (defaut to space) that we talked above and can be altered to whatever you want while specifying the pattern. FS can be defined to another character(s)(yea, can be plural) at the BEGIN{command}.
 
 # FS: (Field Separator)
 ```
