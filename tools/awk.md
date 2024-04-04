@@ -1,4 +1,4 @@
-# save the below data in name.txt
+# pattern search below data in name.txt
 ```
 hello berlin
 how are you
