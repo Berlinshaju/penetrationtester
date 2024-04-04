@@ -10,11 +10,11 @@ awk '/berlin/' name.txt
 ```
 # print multiple words without space
 ```
-awk '{print $1 $3}' file.txt
+awk '{print $1 $3}' name.txt
 ```
 # print multiple words with space
 ```
-awk '{print $1, $3}' file.txt
+awk '{print $1, $3}' name.txt
 ```
 # save the data file.txt its used to sequence number to print like 1,2,3 so on..
 ```
