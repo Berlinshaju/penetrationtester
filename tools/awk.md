@@ -1,3 +1,13 @@
+# save the below data in name.txt
+```
+hello berlin
+how are you
+hi berlin
+```
+# Then Run below comment
+```
+awk '/berlin/' name.txt
+```
 # save the below data in data.txt
 ```
 Alice 25
