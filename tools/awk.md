@@ -1,12 +1,30 @@
 # pattern search below data in name.txt
 ```
-hello berlin
-how are you
-hi berlin
+hello berlin how was the vacation
+how are you i hope your are doing well
+hi berlin my name suraj
 ```
-# Then Run below comment
+# pattern search Run below comment
 ```
 awk '/berlin/' name.txt
+```
+# print multiple words without space
+```
+awk '{print $1 $3}' file.txt
+```
+# print multiple words with space
+```
+awk '{print $1, $3}' file.txt
+```
+# save the data file.txt its used to sequence number to print like 1,2,3 so on..
+```
+hello how are you
+hi what about you
+berlin how are you
+```
+# number in front sequence order to print
+```
+awk '{print NR,$0}' file.txt
 ```
 # save the below data in data.txt
 ```
