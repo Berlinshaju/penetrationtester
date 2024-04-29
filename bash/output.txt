@@ -1,0 +1,19 @@
+all_file_loop.sh
+files.sh
+fileupdate.sh
+function.sh
+global_variable_fuction.sh
+helloworld.sh
+ifnumbers.sh
+list.sh
+local_variable_fuction.sh
+loop.sh
+loop_number.sh
+menu_color.sh
+myscript.sh
+name.sh
+readfile.sh
+removefile.sh
+std_output_redirected.sh
+strings.sh
+Mon Apr 29 12:58:41 IST 2024
