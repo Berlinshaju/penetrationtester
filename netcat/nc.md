@@ -1,4 +1,4 @@
-# Sender sending file
+# Sender sending a file to receiver IP
 ```
 nc 192.168.1.12 1234 < berlin.txt
 ```
